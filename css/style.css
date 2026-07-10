@@ -6,10 +6,11 @@
 /* General Style */
 
 body { 	
-	background-image:url(../images/background.jpg);
+	background-image:url(../images/background.png);
 	background-color:black;
 	background-position:top;
 	background-repeat:no-repeat;
+	background-size:cover;
 	margin:0 auto;
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:12px;
