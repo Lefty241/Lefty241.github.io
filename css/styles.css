@@ -72,6 +72,8 @@ body {
   height: 32px; /* Restricts height so it stays perfectly aligned with text */
   width: auto;  /* Prevents image distortion */
   object-fit: contain;
+  /* This native line strips out solid black backgrounds instantly! */
+  mix-blend-mode: screen;
 }
 
 /* Logo Text Styling */
