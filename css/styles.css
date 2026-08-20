@@ -1,0 +1,586 @@
+/* 1. RESET & VARIABLE SETUP */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg-dark: #0a0b10;
+  --bg-card: #121420;
+  --accent-neon: #00ffcc;
+  --accent-purple: #9d4edd;
+  --accent-blue: #0077ff;
+  --accent-blue2: #00d2ff;
+  --accent-red: #ff445f;
+  --accent-red2: #ff2a5f;
+  --text-main: #f4f4f6;
+  --text-muted: #a0a5b5;
+  --font-header: 'Space Grotesk', sans-serif;
+  --font-body: 'Fira Code', monospace;
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image:url(../images/background.png);
+  background-position:top;
+  background-attachment: fixed;
+  background-repeat:no-repeat;
+  background-size:cover;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 8rem 2rem 4rem 2rem; /* Increased top padding to 8rem to push text below the navbar */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- NAVIGATION HEADER STYLES --- */
+.navbar {
+  position: fixed; /* Keeps bar locked at the top during scroll */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Keeps bar layered on top of all other items */
+  background: rgba(10, 11, 16, 0.7); /* Translucent dark tint */
+  backdrop-filter: blur(12px); /* Premium frosty glass visual effect */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Design */
+/* Logo Link Wrapper */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* Puts a clean space between your logo image and text */
+  text-decoration: none;
+}
+
+/* Controls the size of your logo image */
+.logo-img {
+  height: 32px; /* Restricts height so it stays perfectly aligned with text */
+  width: auto;  /* Prevents image distortion */
+  object-fit: contain;
+}
+
+/* Logo Text Styling */
+.logo-text {
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.logo-text-blue {
+  color: var(--accent-blue2);
+}
+
+.logo-text-red {
+  color: var(--accent-red);
+}
+
+.logo-dot {
+  color: var(--accent-neon);
+}
+
+/* Nav Menu Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text-main);
+}
+
+/* Accent link highlight indicator */
+.nav-links a.active {
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-neon);
+  border-radius: 2px;
+}
+
+/* Button link variation inside the navbar */
+.nav-links a.nav-cta {
+  background: rgba(0, 255, 204, 0.07);
+  color: var(--accent-neon);
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(0, 255, 204, 0.3);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-links a.nav-cta:hover {
+  background: var(--accent-neon);
+  color: var(--bg-dark);
+  border-color: var(--accent-neon);
+}
+
+/* Creates a safety zone for fixed headers during anchor clicks */
+section, .bento-grid {
+  scroll-margin-top: 100px; /* Adjust this value if you ever make your navbar taller or shorter */
+}
+
+ /* 2. HERO HEADER SECTION */
+.hero {
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+h1 {
+  font-family: var(--font-header);
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, var(--text-main), var(--accent-neon));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p.tagline {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* 3. RESPONSIVE BENTO GRID */
+.bento-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
+  /* Forces a strict 2-column grid on desktop screens */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* 4. THE TECH CARDS */
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card h3 {
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  flex-grow: 1; /* Pushes buttons to the exact bottom of every card */
+}
+
+/* Hover animation triggers */
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-neon);
+  box-shadow: 0 10px 30px rgba(0, 255, 204, 0.1);
+}
+
+/* Variant layout choice for drone services */
+.card.drone-variant:hover {
+  border-color: var(--accent-red2);
+  box-shadow: 0 10px 30px rgba(255, 42, 95, 0.1);
+}
+
+/* Variant layout choice for Etsy/Art products */
+.card.art-variant:hover {
+  border-color: var(--accent-purple);
+  box-shadow: 0 10px 30px rgba(157, 78, 221, 0.1);
+}
+
+/* 5. INTERACTIVE BUTTONS */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--accent-neon);
+  color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+  background-color: #00ccaa;
+  box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
+}
+
+.btn-secondary {
+  border: 1px solid var(--text-muted);
+  color: var(--text-main);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* --- PORTFOLIO LAYOUT STYLE --- */
+.portfolio-section {
+  margin-top: 6rem;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-subtitle {
+  margin-bottom: 2rem;
+}
+
+/* Hide the actual radio circle buttons completely */
+input[name="portfolio-filter"] {
+  display: none;
+}
+
+/* Filter Control Buttons Box */
+.filter-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* --- THE FILTER LOGIC ENGINE --- */
+/* When a radio button is selected, look down the line and highlight its label button */
+#filter-all:checked ~ .filter-controls .btn-all { border-color: var(--text-main); background: rgba(255,255,255,0.05); }
+#filter-software:checked ~ .filter-controls .btn-software { border-color: var(--accent-neon); color: var(--accent-neon); }
+#filter-drones:checked ~ .filter-controls .btn-drones { border-color: var(--accent-red); color: var(--accent-red); }
+#filter-art:checked ~ .filter-controls .btn-art { border-color: var(--accent-purple); color: var(--accent-purple); }
+
+/* Hide specific grid items depending on which filter button is selected */
+#filter-software:checked ~ .portfolio-grid .portfolio-item:not(.software),
+#filter-drones:checked ~ .portfolio-grid .portfolio-item:not(.drones),
+#filter-art:checked ~ .portfolio-grid .portfolio-item:not(.art) {
+  display: none;
+}
+
+/* Grid Layout Framework */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* Individual Item Boxes */
+.portfolio-item {
+  background: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.02); /* Clean micro-zoom on hover */
+}
+
+/* Image Spaceholders (Swap these out for real <img> tags later) */
+.item-image-placeholder {
+  width: 100%;
+  height: 200px;
+  background: #191b28;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.item-info {
+  padding: 1.5rem;
+}
+
+.item-info h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+/* Colored Category Tags */
+.item-tag {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tag-blue { color: var(--accent-neon); }
+.tag-red { color: var(--accent-red); }
+.tag-purple { color: var(--accent-purple); }
+
+/* --- CONTACT SECTION FRAMEWORK --- */
+.contact-section {
+  margin-top: 6rem;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: grid;
+  /* Split layout: 1 part text layout, 1.2 parts form layout */
+  grid-template-columns: 1fr 1.2fr; 
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Left Content Details */
+.contact-info h2 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.contact-meta {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.meta-label {
+  font-family: var(--font-header);
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-neon); /* Electric blue signature indicator */
+}
+
+.meta-item p {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+/* Right Content Form Wrapper */
+.contact-form {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+/* Form Input Elements (Inputs, Select boxes, and Textareas) */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  background: rgba(10, 11, 16, 0.6); /* Slightly darker inner input box fill */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* Dropdown arrow text fix for webkit systems */
+.contact-form select option {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+}
+
+/* Focus glow rules for input items */
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-neon);
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.15);
+}
+
+.submit-btn {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.95rem;
+}
+
+/* --- SITE FOOTER LAYOUT STYLES --- */
+.site-footer {
+  margin-top: 8rem;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(18, 20, 32, 0.4); /* Translucent grid card backing blend */
+  backdrop-filter: blur(8px);
+  margin-left: -2rem;  /* Expands background fill edge-to-edge outside body padding */
+  margin-right: -2rem; 
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* Brand section gets double width space layout */
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+}
+
+/* Brand Box Details */
+.footer-logo {
+  font-family: var(--font-header);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+/* Link Columns Formats */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links h4 {
+  font-family: var(--font-header);
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-neon); /* Glow change on cursor hover link hover */
+}
+
+/* Bottom Copyright Bar Strip */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.75rem;
+  color: rgba(160, 165, 181, 0.5); /* Deep muted subtext stamp color */
+  margin-bottom: 0;
+}
+
+/* Mobile responsive alignment rules */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* Stacks column components straight vertical on phone viewports */
+    gap: 2.5rem;
+  }
+}
+
+/* Mobile responsive fallback adjustments */
+@media (max-width: 900px) {
+  .contact-section {
+    grid-template-columns: 1fr; /* Stacks text on top of the form on smaller screens */
+    gap: 2rem;
+  }
+}
+
+/* 6. MOBILE FIXES */
+@media (max-width: 600px) {
+  body {
+    padding: 2rem 1rem;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Mobile responsive menu handling */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1.2rem;
+  }
+  .nav-links a:not(.nav-cta) {
+    display: none; /* Auto-hides standard links on mobile screens for simplicity */
+  }
+}
+
+/* Fallback to 1 column on smaller tablet/mobile devices */
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
