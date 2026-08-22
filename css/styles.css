@@ -1,4 +1,4 @@
-/* 1. RESET & VARIABLE SETUP */
+/* RESET & VARIABLE SETUP */
 * {
   margin: 0;
   padding: 0;
@@ -34,6 +34,23 @@ body {
   padding: 8rem 2rem 4rem 2rem; /* Increased top padding to 8rem to push text below the navbar */
   max-width: 1200px;
   margin: 0 auto;
+}
+
+h1 {
+  font-family: var(--font-header);
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(45deg, var(--text-main), var(--accent-neon));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p.tagline {
+  color: var(--text-muted);
+  font-size: 1.1rem;
 }
 
 /* --- NAVIGATION HEADER STYLES --- */
@@ -149,35 +166,18 @@ body {
   border-color: var(--accent-neon);
 }
 
-/* Creates a safety zone for fixed headers during anchor clicks */
-section, .bento-grid {
-  scroll-margin-top: 100px; /* Adjust this value if you ever make your navbar taller or shorter */
-}
-
- /* 2. HERO HEADER SECTION */
+/* HERO HEADER SECTION */
 .hero {
   margin-bottom: 4rem;
   max-width: 800px;
 }
 
-h1 {
-  font-family: var(--font-header);
-  font-size: 3.5rem;
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(45deg, var(--text-main), var(--accent-neon));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Creates a safety zone for fixed headers during anchor clicks */
+section, .bento-grid {
+  scroll-margin-top: 100px; /* Adjust this value if you ever make your navbar taller or shorter */
 }
 
-p.tagline {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-}
-
-/* 3. RESPONSIVE BENTO GRID */
+/* RESPONSIVE BENTO GRID */
 .bento-grid {
   display: grid;
   /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
@@ -217,19 +217,25 @@ p.tagline {
 .card:hover {
   transform: translateY(-5px);
   border-color: var(--accent-neon);
-  box-shadow: 0 10px 30px rgba(0, 255, 204, 0.1);
+  box-shadow: 0 0px 30px color-mix(in srgb, var(--accent-neon) 25%, transparent);
 }
 
 /* Variant layout choice for drone services */
 .card.drone-variant:hover {
   border-color: var(--accent-red2);
-  box-shadow: 0 10px 30px rgba(255, 42, 95, 0.1);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-red2) 25%, transparent);
 }
 
 /* Variant layout choice for Etsy/Art products */
 .card.art-variant:hover {
   border-color: var(--accent-purple);
-  box-shadow: 0 10px 30px rgba(157, 78, 221, 0.1);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-purple) 25%, transparent);
+}
+
+/* Variant layout choice for Sample MS Store products */
+.card.sample-variant:hover {
+  border-color: var(--accent-blue2);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-blue2) 25%, transparent);
 }
 
 /* 5. INTERACTIVE BUTTONS */
@@ -563,7 +569,7 @@ input[name="portfolio-filter"] {
 /* 6. MOBILE FIXES */
 @media (max-width: 600px) {
   body {
-    padding: 2rem 1rem;
+    padding: 8rem 1rem 2rem 1rem;
   }
   h1 {
     font-size: 2.5rem;
