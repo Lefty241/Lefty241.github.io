@@ -11,8 +11,8 @@
   --bg-card: #121420;
   --accent-neon: #00ffcc;
   --accent-purple: #9d4edd;
-  --accent-blue: #0077ff;
-  --accent-blue2: #00d2ff;
+  --accent-blue: #00d2ff;
+  --accent-blue2: #0077ff;
   --accent-red: #ff445f;
   --accent-red2: #ff2a5f;
   --text-main: #f4f4f6;
@@ -103,7 +103,7 @@ p.tagline {
 }
 
 .logo-text-blue {
-  color: var(--accent-blue2);
+  color: var(--accent-blue);
 }
 
 .logo-text-red {
@@ -234,8 +234,8 @@ section, .bento-grid {
 
 /* Variant layout choice for Sample MS Store products */
 .card.sample-variant:hover {
-  border-color: var(--accent-blue2);
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-blue2) 25%, transparent);
+  border-color: var(--accent-blue);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-blue) 25%, transparent);
 }
 
 /* 5. INTERACTIVE BUTTONS */
@@ -366,7 +366,7 @@ input[name="portfolio-filter"] {
   letter-spacing: 0.05em;
 }
 
-.tag-blue { color: var(--accent-neon); }
+.tag-neon { color: var(--accent-neon); }
 .tag-red { color: var(--accent-red); }
 .tag-purple { color: var(--accent-purple); }
 
@@ -401,7 +401,7 @@ input[name="portfolio-filter"] {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--accent-neon); /* Electric blue signature indicator */
+  color: var(--accent-neon); /* Electric neon signature indicator */
 }
 
 .meta-item p {

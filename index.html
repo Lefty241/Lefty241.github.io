@@ -93,7 +93,7 @@
     <div class="portfolio-item software">
       <div class="item-image-placeholder">[ App Screenshot ]</div>
       <div class="item-info">
-        <span class="item-tag tag-blue">Software</span>
+        <span class="item-tag tag-neon">Software</span>
         <h3>Data Analytics Dashboard</h3>
         <p>A free Windows utility tool published on the Microsoft Store.</p>
       </div>
@@ -123,7 +123,7 @@
     <div class="portfolio-item software">
       <div class="item-image-placeholder">[ Cloud System Code ]</div>
       <div class="item-info">
-        <span class="item-tag tag-blue">Software</span>
+        <span class="item-tag tag-neon">Software</span>
         <h3>Automated API Router</h3>
         <p>Custom backend engineering designed for cloud-native applications.</p>
       </div>
@@ -153,7 +153,7 @@
   </div>
 
   <!-- Right Side: The Form -->
-  <form class="contact-form" action="#" method="POST">
+  <div class="contact-form">
     <div class="form-group">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -179,9 +179,18 @@
       <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project timeline and requirements..."></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
-  </form>
+    <button type="button" id="submit-btn-click" class="btn btn-primary submit-btn">Send Message</button>
 
+  </div>
+  <!--
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="f7016366-c862-47fa-9f0a-f64aab13ce51">
+    <input type="text" name="name" required>
+    <input type="email" name="email" required>
+    <textarea name="message" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+  -->
 </section>
 
 <!-- Main Site Footer -->
@@ -260,25 +269,56 @@
     });
   });
   
-  // 3. PREVENT FORM RESUBMISSION WARNING ON REFRESH
-const contactForm = document.querySelector('.contact-form');
+// 3. SECURE BACKGROUND WEB3FORMS DISPATCH ENGINE
+const clickButton = document.getElementById('submit-btn-click');
 
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    // Stop the browser from doing its default page reload routine
-    e.preventDefault(); 
-    
-    // This is where the form data lives (ready for an API link later)
-    const formData = new FormData(this);
-    
-    // Simulate a successful background delivery
-    console.log("Form successfully processed in background.");
-    
-    // Alert the user that the message went through safely
-    alert("Message sent successfully!");
-    
-    // Wipe all the text input boxes completely clean
-    this.reset(); 
+if (clickButton) {
+  clickButton.addEventListener('click', function() {
+    // 1. Fetch values manually from our input boxes
+    const nameVal = document.getElementById('name').value;
+    const emailVal = document.getElementById('email').value;
+    const typeVal = document.getElementById('service-type').value;
+    const msgVal = document.getElementById('message').value;
+
+    // 2. Prevent empty submissions
+    if (!nameVal || !emailVal || !msgVal) {
+      alert("Please fill out all required fields before sending.");
+      return;
+    }
+
+    // 3. Package the data for Web3Forms API
+    const jsonPayload = JSON.stringify({
+      access_key: "f7016366-c862-47fa-9f0a-f64aab13ce51", // <--- Paste your real key inside these quotes!
+      name: nameVal,
+      email: emailVal,
+      subject: `New [${typeVal.toUpperCase()}] Inquiry from Leftech Website`,
+      message: msgVal
+    });
+
+    // 4. Send data package securely across the network
+	const targetUrl = 'https:' + '/' + '/api.web3forms.com/submit';
+    fetch(targetUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: jsonPayload
+    })
+    .then(async (response) => {
+      if (response.status === 200) {
+        alert("Message sent successfully! I will get back to you shortly.");
+        // Clear all text inputs upon successful delivery
+        document.getElementById('name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+      } else {
+        alert("Server transmission error. Please try again later.");
+      }
+    })
+    .catch(error => {
+      alert("Network connection error. Please check your internet connection.");
+    });
   });
 }
 
