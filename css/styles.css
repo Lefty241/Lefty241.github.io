@@ -343,7 +343,6 @@ input[name="portfolio-filter"] {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.03);
   transition: transform 0.3s ease;
-  /*transition: border-color 0.4s ease, box-shadow 0.4s ease;*/
 }
 
 /* --- PORTFOLIO IMAGE ENGINE --- */
@@ -354,16 +353,58 @@ input[name="portfolio-filter"] {
   object-fit: cover;  
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
   display: block; /* Removes unwanted underlying canvas font whitespace padding */
-  /* ADD ANIMATION SMOOTHNESS TO THE IMAGE */
-  /* Use a cubic-bezier timing function for a sleek, premium easing effect */
-  /*transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);  */
 }
 
 
-/* THE TRIGGER: Zoom image and glow border simultaneously */
-.portfolio-item:hover .item-img {
-  /*transform: scale(1.08);*/ /* 1.08 is the sweet spot. Noticeable, but elegant (8% increase) */
+/* --- IN-PLACE PORTFOLIO TRANSITION STYLES --- */
+/* The canvas wrapper serves as a strict container boundary for our image layers */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
+
+/* Force both images to occupy the exact same frame coordinates */
+.image-wrapper .item-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Smooth transition speed for a premium, laboratory cross-fade look */
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease; 
+}
+
+/* --- MULTI-STAGE (2 or 3) UTILITY ENGINE --- */
+/* Layering standard positions */
+.image-wrapper .item-img:nth-child(1) { z-index: 1; } /* Bottom */
+.image-wrapper .item-img:nth-child(2) { z-index: 2; } /* Middle / Top of 2-stage */
+.image-wrapper .item-img:nth-child(3) { z-index: 3; } /* Top of 3-stage */
+
+/* --- ROUTE A: 2-STAGE TIMING RULES --- */
+.cycle-2:hover .item-img:nth-child(2) {
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+/* --- ROUTE B: 3-STAGE TIMING RULES --- */
+/* Instant melt of the top layer (3) */
+.cycle-3:hover .item-img:nth-child(3) {
+  opacity: 0;
+  transition-delay: 0s;
+}
+/* Staggered melt of the middle layer (2) */
+.cycle-3:hover .item-img:nth-child(2) {
+  opacity: 0;
+  transition-delay: 0.6s;
+}
+
+/* Elegant un-hover handling resets */
+.cycle-3 .item-img:nth-child(3) { transition-delay: 0.4s; }
+.cycle-3 .item-img:nth-child(2) { transition-delay: 0s; }
 
 .portfolio-item:hover {
   transform: scale(1.08); /* Clean micro-zoom on hover */
