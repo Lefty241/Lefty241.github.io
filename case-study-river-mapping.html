@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Case Study: Project Name | Leftech</title>
+  <title>Case Study: Aerial Pollution Trace | Leftech</title>
   
   <link rel="preconnect" href="https://googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
   <link href="https://googleapis.com/css2?family=Fira+Code:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
-    /* 1. LINK GLOBAL SITE STYLE CONSTANTS */
+    /* 1. GLOBAL BASE STYLE SYNC */
     * {
       margin: 0;
       padding: 0;
@@ -20,8 +20,8 @@
     :root {
       --bg-dark: #0a0b10;
       --bg-card: #121420;
-	  --accent-blue: #00d2ff;
-	  --accent-neon: #00ffcc; /* highlight neon green for software */
+      --accent-blue: #00d2ff;
+      --accent-red: #ff2a5f; /* scarlet variable for aviation assets */
       --text-main: #f4f4f6;
       --text-muted: #a0a5b5;
       --font-header: 'Space Grotesk', sans-serif;
@@ -30,7 +30,7 @@
 
     body {
       background-color: var(--bg-dark);
-      background-image: url('images/background.png'); /* Reuse your fixed top bg image */
+      background-image: url('images/background.png');
       background-attachment: fixed;
       background-position: top;
       background-size: cover;
@@ -39,14 +39,14 @@
       font-family: var(--font-body);
       line-height: 1.7;
       padding: 6rem 2rem 4rem 2rem;
-      max-width: 900px; /* Narrower width for premium, long-form editorial reading comfort */
+      max-width: 900px;
       margin: 0 auto;
     }
 
-    /* 2. CASE STUDY HEADER SYSTEM */
+    /* 2. CASE STUDY NAVIGATION & HEADER */
     .back-link {
       display: inline-block;
-      color: var(--accent-neon);
+      color: var(--accent-red);
       text-decoration: none;
       font-size: 0.85rem;
       margin-bottom: 2rem;
@@ -85,7 +85,7 @@
       color: var(--text-main);
     }
 
-    /* 3. HERO HERO MEDIA HERO WRAPPER */
+    /* 3. CORE DISPLAY MEDIA FRAME */
     .case-hero-image {
       width: 100%;
       height: 450px;
@@ -95,7 +95,7 @@
       margin-bottom: 3rem;
     }
 
-    /* 4. PERFORMANCE HIGHLIGHT GRID */
+    /* 4. METRICS / MISSION HIGHLIGHTS GRID */
     .metrics-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -114,7 +114,7 @@
     .metric-card h2 {
       font-family: var(--font-header);
       font-size: 2.5rem;
-      color: var(--accent-neon);
+      color: var(--accent-red);
       margin-bottom: 0;
     }
 
@@ -123,7 +123,7 @@
       color: var(--text-muted);
     }
 
-    /* 5. LONGFORM CONTENT BLOCK FORMATTING */
+    /* 5. EDITORIAL TEXT LAYOUT RULES */
     .case-body-content h2, .case-body-content h3 {
       font-family: var(--font-header);
       margin-top: 3rem;
@@ -135,7 +135,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* Reusable callout container block for snippets, code blocks, or drone logs */
     .tech-callout {
       background: rgba(18, 20, 32, 0.6);
       border-left: 3px solid var(--accent-blue);
@@ -145,7 +144,7 @@
       margin: 2rem 0;
     }
 
-    /* 6. CALL TO ACTION FOOTER LINK */
+    /* 6. CALL TO ACTION CONTAINER STRIP */
     .case-footer-cta {
       margin-top: 6rem;
       padding-top: 4rem;
@@ -168,43 +167,46 @@
 
   <!-- Project Title Header -->
   <header class="project-header">
-    <h1>Computer Vision Edge Detection Pipeline</h1>
+    <h1>Aerial Acquired Pollution Source Identification & Mapping</h1>
     <div class="project-meta-strip">
-      <div class="meta-block"><span>Division</span><p>Software Engineering</p></div>
-      <div class="meta-block"><span>Client / Platform</span><p>Internal / MS Store Prototype</p></div>
-      <div class="meta-block"><span>Stack Used</span><p>C++, OpenCV, WebAssembly</p></div>
+      <div class="meta-block"><span>Operation Category</span><p>Commercial Drone Services</p></div>
+      <div class="meta-block"><span>Impact Boundary</span><p>0.25+ Miles Documented</p></div>
+      <div class="meta-block"><span>Deployment Core</span><p>Community Advocacy Councils</p></div>
     </div>
   </header>
 
-  <!-- High Impact Main Project Image -->
-  <img src="stage3-neon-edges.png" alt="Edge Detection Main Visual" class="case-hero-image">
+  <!-- High Impact Main Project Image (Clear view of the plume boundary) -->
+  <img src="images/RiverCantamination.jpg" alt="Aerial Drone Capture of River Contamination Source" class="case-hero-image">
 
-  <!-- Quantitative Performance Metrics Box -->
+  <!-- Quantitative Mission Impact Parameters -->
   <section class="metrics-grid">
-    <div class="metric-card"><h2>&lt; 4ms</h2><p>Matrix Processing Latency</p></div>
-    <div class="metric-card"><h2>60 FPS</h2><p>Real-Time Video Rendering</p></div>
-    <div class="metric-card"><h2>98.4%</h2><p>Accuracy via Kernel Optimization</p></div>
+    <div class="metric-card"><h2>100%</h2><p>Source Canal Isolation</p></div>
+    <div class="metric-card"><h2>0.25 Mi</h2><p>Downstream Contamination Tracking</p></div>
+    <div class="metric-card"><h2>Actionable</h2><p>Evidentiary Legal Council Corroboration</p></div>
   </section>
 
   <!-- Editorial Technical Core Deep Dive Story -->
   <article class="case-body-content">
-    <h2>Project Summary & Vision Pipeline</h2>
-    <p>This initiative targeted creating an edge detection application pipeline designed to run smoothly on low-power device architectures. By customizing the memory access paths of matrix convolution operations, processing footprint overhead dropped dramatically.</p>
+    <h2>Project Summary & Flight Objective</h2>
+    <p>North Florida river community members commissioned an aerial inspection operation to investigate localized water clarity degradation. The explicit flight goal was to gather high-resolution, unedited aerial imagery to trace mixing plumes back to their exact source infrastructure origin points.</p>
 
     <div class="tech-callout">
-      <strong>Engineering Blueprint:</strong> Convolution filters were executed directly utilizing localized row matrix caching routines. This architecture bypassed typical multi-pass algorithm bandwidth limits completely.
+      <strong>Evidentiary Flight Blueprint:</strong> Missions were planned utilizing specific altitude parameters to maximize visibility of the underwater boundary line, documenting water density changes across different channels.
     </div>
 
-    <h3>Technical Achievements</h3>
-    <p>Leveraging direct structural hardware registers instead of generic libraries allowed the processing loop execution window to land entirely inside the CPU's primary L1 cache memory boundary blocks.</p>
+    <h3>Aviation Execution & Mapping Discoveries</h3>
+    <p>Flight data clearly captured a clean baseline upstream of a distinct drainage canal intersection. The aerial captures isolated dark, opaque effluent spilling straight from the canal, creating an obvious boundary layer that tracked flowing downstream for over a quarter of a mile.</p>
+
+    <h3>Community Advocacy Impact</h3>
+    <p>The unedited geospatial media and data logs served as core visual evidence during an official community council environment meeting. This imagery provided community stakeholders with clear, undeniable evidence to map out structural remediation workflows.</p>
   </article>
 
   <!-- Bottom Forward Route Closer Section -->
   <section class="case-footer-cta">
-    <h3>Have a Similar Technical Vision Challenge?</h3>
-    <p>Let's deploy high-performance engineering blocks onto your active business requirements channels.</p>
+    <h3>Need High-Resolution Aerial Data Insights?</h3>
+    <p>Let's plan custom flight configurations to extract precise mapping metrics for your project requirements.</p>
     <br>
-    <a href="index.html#contact" style="text-decoration:none; display:inline-block;" class="back-link">Launch Project Brief Form &rarr;</a>
+    <a href="index.html#contact" style="text-decoration:none; display:inline-block;" class="back-link">Request Drone Services Consultation &rarr;</a>
   </section>
 
 </body>
