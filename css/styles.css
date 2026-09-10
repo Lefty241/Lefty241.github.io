@@ -10,7 +10,7 @@
   --bg-dark: #0a0b10;
   --bg-card: #121420;
   --accent-neon: #00ffcc; /* green */
-  --accent-purple: #9d4edd;
+  --accent-purple: #bd6efd;/*#9d4edd*/
   --accent-blue: #00d2ff;
   --accent-blue2: #0077ff;
   --accent-red: #ff445f;
@@ -89,7 +89,7 @@ p.tagline {
   height: 32px; /* Restricts height so it stays perfectly aligned with text */
   width: auto;  /* Prevents image distortion */
   object-fit: contain;
-  /* This native line strips out solid black backgrounds instantly! */
+  /* This native line strips out solid black backgrounds instantly! (transparent BG) */
   mix-blend-mode: screen;
 }
 
@@ -238,6 +238,14 @@ section, .bento-grid {
   box-shadow: 0 10px 30px color-mix(in srgb, var(--accent-blue) 25%, transparent);
 }
 
+/* if more than one button is in a card */
+.card-multibtn {
+  display: flex;         /* Forces the items inside to be side-by-side */
+  flex-direction: row;   /* Explicitly sets horizontal alignment (default) */
+  justify-content: space-between; /* Pushes item 1 left, item 2 right */
+  width: 100%;           /* Ensures the footer spans the full sidebar width */
+}
+
 /* 5. INTERACTIVE BUTTONS */
 .btn {
   display: inline-block;
@@ -268,7 +276,7 @@ section, .bento-grid {
   border-color: var(--text-main);
   background: rgba(255, 255, 255, 0.05);
 }
-
+ 
 /* --- PORTFOLIO LAYOUT STYLE --- */
 .portfolio-section {
   margin-top: 6rem;
