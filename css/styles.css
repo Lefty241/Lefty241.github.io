@@ -244,6 +244,7 @@ section, .bento-grid {
   flex-direction: row;   /* Explicitly sets horizontal alignment (default) */
   justify-content: space-between; /* Pushes item 1 left, item 2 right */
   width: 100%;           /* Ensures the footer spans the full sidebar width */
+  gap: 15px;
 }
 
 /* 5. INTERACTIVE BUTTONS */
@@ -622,23 +623,7 @@ input[name="portfolio-filter"] {
   margin-bottom: 0;
 }
 
-/* Mobile responsive alignment rules */
-@media (max-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1fr; /* Stacks column components straight vertical on phone viewports */
-    gap: 2.5rem;
-  }
-}
-
-/* Mobile responsive fallback adjustments */
-@media (max-width: 900px) {
-  .contact-section {
-    grid-template-columns: 1fr; /* Stacks text on top of the form on smaller screens */
-    gap: 2rem;
-  }
-}
-
-/* 6. MOBILE FIXES */
+/* MOBILE FIXES */
 @media (max-width: 600px) {
   body {
     padding: 8rem 1rem 2rem 1rem;
@@ -648,7 +633,6 @@ input[name="portfolio-filter"] {
   }
 }
 
-/* Mobile responsive menu handling */
 @media (max-width: 768px) {
   .nav-links {
     gap: 1.2rem;
@@ -658,9 +642,22 @@ input[name="portfolio-filter"] {
   }
 }
 
-/* Fallback to 1 column on smaller tablet/mobile devices */
 @media (max-width: 900px) {
   .bento-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Fallback to 1 column on smaller tablet/mobile devices */
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-section {
+    grid-template-columns: 1fr; /* Stacks text on top of the form on smaller screens */
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* Stacks column components straight vertical on phone viewports */
+    gap: 2.5rem;
   }
 }
