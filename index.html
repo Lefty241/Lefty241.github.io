@@ -1,374 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LefTech | tech solutions hub</title>
-  <link href="css/styles.css" rel="stylesheet" type="text/css" />
-  
-  <!-- Modern Google Fonts Link -->
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Fira+Code:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LefTech | tech solutions hub</title>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
 
- </head>
-  <body>
-  
-  	<!-- Navigation Header Bar -->
+    <!-- Modern Google Fonts Link -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Fira+Code:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Navigation Header Bar -->
     <header class="navbar">
-      <div class="nav-container">
-        <a href="#" class="nav-logo"><img src="images/LTlogo(bright).png" alt="Leftech Logo" class="logo-img">
-		<span class="logo-text"><span class="logo-text-red">LEF<span class="logo-text-blue">TECH</span></span></span>
-		</a>
-        
-        <!-- Desktop Navigation Links -->
-        <nav class="nav-links">
-          <a href="#" class="nav-item active" data-section="hero">Home</a>
-		  <a href="#services" class="nav-item" data-section="services">Services</a>
-          <a href="#portfolio" class="nav-item" data-section="portfolio">Portfolio</a>
-          <a href="#contact" class="nav-cta">Let's Work</a>
-        </nav>
-      </div>
-    </header>
-  
-    <section class="hero">
-    <h1>Where Tech Meets Art.</h1>
-    <p>Custom software engineering, commercial drone operations, 3D print engineering, parts replication, and tech-driven art assets.</p>
-    </section>
-    
-	<!-- Services Section -->
-    <div id="services" class="bento-grid">
-      <!-- Card 1: Software -->
-      <div class="card">
-        <h3>Software Dev</h3>
-        <p>Custom apps and web platforms tailored to your business needs. Specializing in Science/Technology, Productivity, Smart Devices, Automation, Educational... </p>
-        <a href="#contact" class="btn btn-primary">Hire Me</a>
-      </div>
-    
-      <!-- Card 2: Drones -->
-      <div class="card drone-variant">
-        <h3>Drone Services</h3>
-        <p>Commercial aerial mapping, site inspections, photography and videography + post-mission analysis packages. Inquire within about special payloads.</p>
-        <a href="#contact" class="btn btn-primary">Get a Quote</a>
-      </div>
-    
-      <!-- Card 3: Etsy Store (Uses Purple Accent Variant) -->
-      <div class="card art-variant">
-        <h3>Etsy Shop</h3>
-        <p>Explore physical tech and custom 3D print products available from my Etsy Shop.</p>
-        <div class="card-multibtn">
-			 <a href="https://www.etsy.com/shop/LefTech" target="_blank" class="btn btn-secondary">Browse Store</a>
-			 <a href="#contact" class="btn btn-primary" >Custom Request</a>
-		</div>
-      </div>
-    
-      <!-- Card 4: MS Store -->
-      <div class="card sample-variant">
-        <h3>Free Tools</h3>
-        <p>Download my free desktop sample products on the Microsoft Store.</p>
-        <a href="https://apps.microsoft.com/search/publisher?name=Lefty241" target="_blank" class="btn btn-secondary">Get Apps</a>
-      </div>
-    </div>
-	
-	<!-- Portfolio Section Wrapper -->
-<section id="portfolio" class="portfolio-section">
-  <h2>Featured Projects</h2>
-  <p class="section-subtitle">A curated look at my software tools, aerial operations, and tech creations.</p>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="images/LTlogo(bright).png" alt="Leftech Logo" class="logo-img">
+                <span class="logo-text"><span class="logo-text-red">LEF<span class="logo-text-blue">TECH</span></span></span>
+            </a>
 
-  <!-- Invisible Radio Buttons for Filtering -->
-  <input type="radio" id="filter-all" name="portfolio-filter" checked>
-  <input type="radio" id="filter-software" name="portfolio-filter">
-  <input type="radio" id="filter-drones" name="portfolio-filter">
-  <input type="radio" id="filter-art" name="portfolio-filter">
-
-  <!-- Clickable Filter Label Buttons -->
-  <div class="filter-controls">
-    <label for="filter-all" class="filter-btn btn-all">All Work</label>
-    <label for="filter-software" class="filter-btn btn-software">Software</label>
-    <label for="filter-drones" class="filter-btn btn-drones">Drones</label>
-    <label for="filter-art" class="filter-btn btn-art">Tech Art</label>
-  </div>
-
-  <!-- The Portfolio Project Grid -->
-  <div class="portfolio-grid">
-    
-	<!-- Item: River Pollution -->
-    <div class="portfolio-item drones">
-      <div class="image-wrapper cycle-2">
-        <img src="images/RiverPollution-Filtered.png" alt="Filtered" class="item-img">
-        <img src="images/RiverPollution-Raw.png" alt="Raw" class="item-img">
-      </div>
-	  <a href="case-study-river-mapping.html" style="text-decoration: none; color: inherit;">
-      <div class="item-info">
-        <span class="item-tag tag-red">Drone Op</span>
-        <h3>Water Pollution Source Mapping</h3>
-        <p>River community members commissioned an aerial inspection operation to identify the source of sudden water clarity degradation. <span style="color: var(--accent-red)">Click for case study.</span></p>
-      </div>
-	  </a>
-    </div>
-	
-	<!-- Item with 3 stacked images on hover AND intem-info wrapped in case-study link -->
-    <div class="portfolio-item software">
-      <!-- The image wrapper block holds our stacked image layers -->
-      <div class="image-wrapper cycle-2">
-  	    <img src="images/crab-edge.png" alt="Processed State Output" class="item-img">
-        <img src="images/crab-live.jpg" alt="Raw State Input" class="item-img">
-      </div>
-  	<!-- Wrap your card description content box in an anchor link pointer line -->
-      <a href="case-study-template.html" style="text-decoration: none; color: inherit;">
-        <div class="item-info">
-          <span class="item-tag tag-neon">Image Processing</span>
-          <h3>Edge Detection Pipeline</h3>
-          <p>A fast C++ computer vision tool running custom matrix kernel convolutions. <span style="color: var(--accent-neon)">Click for case study.</span></p>
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-links">
+                <a href="#" class="nav-item active" data-section="hero">Home</a>
+                <a href="#services" class="nav-item" data-section="services">Services</a>
+                <a href="#portfolio" class="nav-item" data-section="portfolio">Portfolio</a>
+                <a href="#contact" class="nav-cta">Let's Work</a>
+            </nav>
         </div>
-  	  </a>
-    </div>
-	
-  	<!-- Item: Tech Art -->
-    <div class="portfolio-item art">
-      <div class="image-wrapper cycle-3">
-	    <img src="images/Art3.jpg" alt="art3" class="item-img">
-        <img src="images/Art2.jpg" alt="art2" class="item-img">
-        <img src="images/Art1.jpg" alt="art1" class="item-img">
-      </div>
-	  <a href="case-study-cafe-art.html" style="text-decoration: none; color: inherit;">
-      <div class="item-info">
-        <span class="item-tag tag-purple">Tech Art</span>
-        <h3>3D Aquatic Life Series</h3>
-        <p>Bulk order custom physical merchandise, created through technical pipeline for a local cafe (also available in my Etsy store). <span style="color: var(--accent-purple)">Click for case study.</span></p>
-      </div>
-	  </a>
-    </div>
-	
-	<!-- Item: Software -->
-    <div class="portfolio-item software">
-      <!-- The image wrapper block holds our stacked image layers -->
-      <div class="image-wrapper cycle-3">
-	  	<img src="images/Productivity3.png" alt="productivity3" class="item-img">
-        <img src="images/Productivity2.png" alt="productivity2" class="item-img">
-        <img src="images/Productivity1.png" alt="productivity1" class="item-img">
-      </div>
-      <div class="item-info">
-        <span class="item-tag tag-neon">Software</span>
-        <h3>Productivity Packages</h3>
-        <p>Free Windows utility tools published on the Microsoft Store. Cross-reference massive data sources into reports instantly to save days of research, and seamlessly sync all your deadlines and events into your preferred calendar for effortless tracking.</p>
-      </div>
-    </div>
-	
-	<!-- Item with 2 stacked images on hover -->
-	<div class="portfolio-item drones">
-    <!-- The image wrapper block holds our stacked image layers -->
-    <div class="image-wrapper cycle-2">
-      <img src="images/DroneFishComp.jpg" alt="Compensated State" class="item-img">
-	  <img src="images/DroneFisheye.jpg" alt="Raw State" class="item-img">
-      
-    </div>    
-    <div class="item-info">
-      <span class="item-tag tag-red">Drone OP</span>
-      <h3>Video Process Enhancements</h3>
-      <p>Transforming budget drone footage into cinematic masterpieces with seamless fisheye correction and horizon leveling (plus much much more!). I provide the services and can tailor an app to meet your specific on-going production needs.</p>
-    </div>
-  </div>
+    </header>
 
-    <!-- Item: Drone -->
-    <div class="portfolio-item drones">
-      <div class="image-wrapper cycle-2">
-        <img src="images/construction1.jpg" alt="Site inspect" class="item-img">
-        <img src="images/construction0.jpg" alt="Full site" class="item-img">
-      </div>
-      <div class="item-info">
-        <span class="item-tag tag-red">Drone Op</span>
-        <h3>Commercial Site Survey</h3>
-        <p>Construction progress tracking, safety and feature inspections, and high-resolution 3D orthomosaic mapping services.</p>
-      </div>
+    <section class="hero">
+        <h1>Where Tech Meets Art.</h1>
+        <p>Custom software engineering, commercial drone operations, 3D print engineering, parts replication, and tech-driven art assets.</p>
+    </section>
+
+    <!-- Services Section -->
+    <div id="services" class="bento-grid">
+        <!-- Card 1: Software -->
+        <div class="card">
+            <h3>Software Dev</h3>
+            <p>Custom apps and web platforms tailored to your business needs. Specializing in Science/Technology, Productivity, Smart Devices, Automation, Educational... </p>
+            <a href="#contact" class="btn btn-primary">Hire Me</a>
+        </div>
+
+        <!-- Card 2: Drones -->
+        <div class="card drone-variant">
+            <h3>Drone Services</h3>
+            <p>Commercial aerial mapping, site inspections, photography and videography + post-mission analysis packages. Inquire within about special payloads.</p>
+            <a href="#contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+
+        <!-- Card 3: Etsy Store (Uses Purple Accent Variant) -->
+        <div class="card art-variant">
+            <h3>Etsy Shop</h3>
+            <p>Explore physical tech and custom 3D print products available from my Etsy Shop.</p>
+            <div class="card-multibtn">
+                <a href="https://www.etsy.com/shop/LefTech" target="_blank" class="btn btn-secondary">Browse Store</a>
+                <a href="#contact" class="btn btn-primary">Custom Request</a>
+            </div>
+        </div>
+
+        <!-- Card 4: MS Store -->
+        <div class="card sample-variant">
+            <h3>Free Tools</h3>
+            <p>Download my free desktop sample products on the Microsoft Store.</p>
+            <a href="https://apps.microsoft.com/search/publisher?name=Lefty241" target="_blank" class="btn btn-secondary">Get Apps</a>
+        </div>
     </div>
 
-  </div>
-</section>
+    <!-- Portfolio Section Wrapper -->
+    <section id="portfolio" class="portfolio-section">
+        <h2>Featured Projects</h2>
+        <p class="section-subtitle">A curated look at my software tools, aerial operations, and tech creations.</p>
 
-<!-- Contact Section Wrapper -->
-<section id="contact" class="contact-section">
-  
-  <!-- Left Side: Informational Context -->
-  <div class="contact-info">
-    <h2>Let's Build Something.</h2>
-    <p>Have an enterprise software project, require advanced drone mapping, or want to discuss a custom tech-art installation? Drop a note here.</p>
-    
-    <div class="contact-meta">
-      <div class="meta-item">
-        <span class="meta-label">Software Services</span>
-        <p>Full-stack web apps, cloud native integrations, API development.</p>
-      </div>
-      <div class="meta-item">
-        <span class="meta-label">Aviation Services</span>
-        <p>Commercial drone data, 3D orthomosaic maps, thermal infrastructure imaging.</p>
-      </div>
-    </div>
-  </div>
+        <!-- Invisible Radio Buttons for Filtering -->
+        <input type="radio" id="filter-all" name="portfolio-filter" checked>
+        <input type="radio" id="filter-software" name="portfolio-filter">
+        <input type="radio" id="filter-drones" name="portfolio-filter">
+        <input type="radio" id="filter-art" name="portfolio-filter">
 
-  <!-- Right Side: The Form -->
-  <div class="contact-form">
-    <div class="form-group">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" name="name" required placeholder="John Doe">
-    </div>
+        <!-- Clickable Filter Label Buttons -->
+        <div class="filter-controls">
+            <label for="filter-all" class="filter-btn btn-all">All Work</label>
+            <label for="filter-software" class="filter-btn btn-software">Software</label>
+            <label for="filter-drones" class="filter-btn btn-drones">Drones</label>
+            <label for="filter-art" class="filter-btn btn-art">Tech Art</label>
+        </div>
 
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required placeholder="john@example.com">
-    </div>
+        <!-- The Portfolio Project Grid -->
+        <div class="portfolio-grid">
 
-    <div class="form-group">
-      <label for="service-type">Project Type</label>
-      <select id="service-type" name="service-type">
-        <option value="software">Software Engineering</option>
-        <option value="drone">Drone Operations / Mapping</option>
-        <option value="art">Custom Tech Art / Commission</option>
-        <option value="other">General Query</option>
-      </select>
-    </div>
+            <!-- Item: River Pollution -->
+            <div class="portfolio-item drones">
+                <div class="image-wrapper cycle-2">
+                    <img src="images/RiverPollution-Filtered.png" alt="Filtered" class="item-img">
+                    <img src="images/RiverPollution-Raw.png" alt="Raw" class="item-img">
+                </div>
+                <a href="case-study-river-mapping.html" style="text-decoration: none; color: inherit;">
+                    <div class="item-info">
+                        <span class="item-tag tag-red">Drone Op</span>
+                        <h3>Water Pollution Source Mapping</h3>
+                        <p>River community members commissioned an aerial inspection operation to identify the source of sudden water clarity degradation. <span style="color: var(--accent-red)">Click for case study.</span></p>
+                    </div>
+                </a>
+            </div>
 
-    <div class="form-group">
-      <label for="message">Project Brief / Message</label>
-      <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project timeline and requirements..."></textarea>
-    </div>
+            <!-- Item with 3 stacked images on hover AND intem-info wrapped in case-study link -->
+            <div class="portfolio-item software">
+                <!-- The image wrapper block holds our stacked image layers -->
+                <div class="image-wrapper cycle-2">
+                    <img src="images/crab-edge.png" alt="Processed State Output" class="item-img">
+                    <img src="images/crab-live.jpg" alt="Raw State Input" class="item-img">
+                </div>
+                <!-- Wrap your card description content box in an anchor link pointer line -->
+                <a href="case-study-template.html" style="text-decoration: none; color: inherit;">
+                    <div class="item-info">
+                        <span class="item-tag tag-neon">Image Processing</span>
+                        <h3>Edge Detection Pipeline</h3>
+                        <p>A fast C++ computer vision tool running custom matrix kernel convolutions. <span style="color: var(--accent-neon)">Click for case study.</span></p>
+                    </div>
+                </a>
+            </div>
 
-    <button type="button" id="submit-btn-click" class="btn btn-primary submit-btn">Send Message</button>
+            <!-- Item: Tech Art -->
+            <div class="portfolio-item art">
+                <div class="image-wrapper cycle-3">
+                    <img src="images/Art3.jpg" alt="art3" class="item-img">
+                    <img src="images/Art2.jpg" alt="art2" class="item-img">
+                    <img src="images/Art1.jpg" alt="art1" class="item-img">
+                </div>
+                <a href="case-study-cafe-art.html" style="text-decoration: none; color: inherit;">
+                    <div class="item-info">
+                        <span class="item-tag tag-purple">Tech Art</span>
+                        <h3>3D Aquatic Life Series</h3>
+                        <p>Bulk order custom physical merchandise, created through technical pipeline for a local cafe (also available in my Etsy store). <span style="color: var(--accent-purple)">Click for case study.</span></p>
+                    </div>
+                </a>
+            </div>
 
-  </div>
-  
-</section>
+            <!-- Item: Software -->
+            <div class="portfolio-item software">
+                <!-- The image wrapper block holds our stacked image layers -->
+                <div class="image-wrapper cycle-3">
+                    <img src="images/Productivity3.png" alt="productivity3" class="item-img">
+                    <img src="images/Productivity2.png" alt="productivity2" class="item-img">
+                    <img src="images/Productivity1.png" alt="productivity1" class="item-img">
+                </div>
+                <div class="item-info">
+                    <span class="item-tag tag-neon">Software</span>
+                    <h3>Productivity Packages</h3>
+                    <p>Free Windows utility tools published on the Microsoft Store. Cross-reference massive data sources into reports instantly to save days of research, and seamlessly sync all your deadlines and events into your preferred calendar for effortless tracking.</p>
+                </div>
+            </div>
 
-<!-- Main Site Footer -->
-<footer class="site-footer">
-  <div class="footer-container">
-    
-    <!-- Left Pillar: Brand Summary -->
-    <div class="footer-brand">
-      <span class="footer-logo"><span class="logo-text-red">LEF<span class="logo-text-blue">TECH</span></span></span>
-      <p>Bridging enterprise computing pipelines with custom automated hardware architectures and digital artisan products.</p>
-    </div>
+            <!-- Item with 2 stacked images on hover -->
+            <div class="portfolio-item drones">
+                <!-- The image wrapper block holds our stacked image layers -->
+                <div class="image-wrapper cycle-2">
+                    <img src="images/DroneFishComp.jpg" alt="Compensated State" class="item-img">
+                    <img src="images/DroneFisheye.jpg" alt="Raw State" class="item-img">
 
-    <!-- Center Pillar: Navigation Shortcuts -->
-    <div class="footer-links">
-      <h4>Navigation</h4>
-      <a href="#">Top</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </div>
+                </div>
+                <div class="item-info">
+                    <span class="item-tag tag-red">Drone OP</span>
+                    <h3>Video Process Enhancements</h3>
+                    <p>Transforming budget drone footage into cinematic masterpieces with seamless fisheye correction and horizon leveling (plus much much more!). I provide the services and can tailor an app to meet your specific on-going production needs.</p>
+                </div>
+            </div>
 
-    <!-- Right Pillar: External Marketplace Frameworks -->
-    <div class="footer-links">
-      <h4>Connect</h4>
-      <a href="https://www.etsy.com/shop/LefTech" target="_blank">Etsy Marketplace</a>
-      <a href="https://apps.microsoft.com/search/publisher?name=Lefty241" target="_blank">Microsoft Developer Store</a>
-      <a href="https://github.com/Lefty241" target="_blank">GitHub Engineering Profile</a>
-      <a href="https://www.linkedin.com/in/david-clark-physicist" target="_blank">LinkedIn Network</a>
-    </div>
+            <!-- Item: Drone -->
+            <div class="portfolio-item drones">
+                <div class="image-wrapper cycle-2">
+                    <img src="images/construction1.jpg" alt="Site inspect" class="item-img">
+                    <img src="images/construction0.jpg" alt="Full site" class="item-img">
+                </div>
+                <div class="item-info">
+                    <span class="item-tag tag-red">Drone Op</span>
+                    <h3>Commercial Site Survey</h3>
+                    <p>Construction progress tracking, safety and feature inspections, and high-resolution 3D orthomosaic mapping services.</p>
+                </div>
+            </div>
 
-  </div>
+        </div>
+    </section>
 
-  <!-- Bottom Strip: System Copyright Stamp -->
-  <div class="footer-bottom">
-    <p>&copy; 2026 LEFTECH Services. All rights reserved. Made using native HTML5 & CSS3.</p>
-  </div>
-</footer>
+    <!-- Contact Section Wrapper -->
+    <section id="contact" class="contact-section">
 
-<!-- Scroll and Click Tracking Script -->
-<script>
-  const navItems = document.querySelectorAll('.nav-item');
-  const sections = document.querySelectorAll('section, .bento-grid');
+        <!-- Left Side: Informational Context -->
+        <div class="contact-info">
+            <h2>Let's Build Something.</h2>
+            <p>Have an enterprise software project, require advanced drone mapping, or want to discuss a custom tech-art installation? Drop a note here.</p>
 
-  // 1. TRACK SCROLLING POSITION
-  window.addEventListener('scroll', () => {
-    let currentSectionId = 'hero'; // Default fallback anchor
+            <div class="contact-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Software Services</span>
+                    <p>Full-stack web apps, cloud native integrations, API development.</p>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Aviation Services</span>
+                    <p>Commercial drone data, 3D orthomosaic maps, thermal infrastructure imaging.</p>
+                </div>
+            </div>
+        </div>
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      // Triggers the shift slightly before the section hits the top edge
-      if (window.scrollY >= sectionTop - 160) {
-        // If it's the bento grid, map it to the "services" link
-        if (section.classList.contains('bento-grid')) {
-          currentSectionId = 'services';
-        } else {
-          currentSectionId = section.getAttribute('id') || 'hero';
+        <!-- Right Side: The Form -->
+        <div class="contact-form">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="service-type">Project Type</label>
+                <select id="service-type" name="service-type">
+                    <option value="software">Software Engineering</option>
+                    <option value="drone">Drone Operations / Mapping</option>
+                    <option value="art">Custom Tech Art / Commission</option>
+                    <option value="other">General Query</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Project Brief / Message</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project timeline and requirements..."></textarea>
+            </div>
+
+            <button type="button" id="submit-btn-click" class="btn btn-primary submit-btn">Send Message</button>
+
+        </div>
+
+    </section>
+
+    <!-- Main Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <!-- Left Pillar: Brand Summary -->
+            <div class="footer-brand">
+                <span class="footer-logo"><span class="logo-text-red">LEF<span class="logo-text-blue">TECH</span></span></span>
+                <p>Bridging enterprise computing pipelines with custom automated hardware architectures and digital artisan products.</p>
+            </div>
+
+            <!-- Center Pillar: Navigation Shortcuts -->
+            <div class="footer-links">
+                <h4>Navigation</h4>
+                <a href="#">Top</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <!-- Right Pillar: External Marketplace Frameworks -->
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <a href="https://www.etsy.com/shop/LefTech" target="_blank">Etsy Marketplace</a>
+                <a href="https://apps.microsoft.com/search/publisher?name=Lefty241" target="_blank">Microsoft Developer Store</a>
+                <a href="https://github.com/Lefty241" target="_blank">GitHub Engineering Profile</a>
+                <a href="https://www.linkedin.com/in/david-clark-physicist" target="_blank">LinkedIn Network</a>
+            </div>
+
+        </div>
+
+        <!-- Bottom Strip: System Copyright Stamp -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 LEFTECH Services. All rights reserved. Made using native HTML5 & CSS3.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll and Click Tracking Script -->
+    <script>
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('section, .bento-grid');
+
+        // 1. TRACK SCROLLING POSITION
+        window.addEventListener('scroll', () => {
+            let currentSectionId = 'hero'; // Default fallback anchor
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // Triggers the shift slightly before the section hits the top edge
+                if (window.scrollY >= sectionTop - 160) {
+                    // If it's the bento grid, map it to the "services" link
+                    if (section.classList.contains('bento-grid')) {
+                        currentSectionId = 'services';
+                    } else {
+                        currentSectionId = section.getAttribute('id') || 'hero';
+                    }
+                }
+            });
+
+            // Remove active status from all links, then add it to the visible one
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('data-section') === currentSectionId) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // 2. SMOOTH SCROLL CLICK FIX
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                // Clear old underlines instantly on click
+                navItems.forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        // 3. SECURE BACKGROUND WEB3FORMS DISPATCH ENGINE
+        const clickButton = document.getElementById('submit-btn-click');
+
+        if (clickButton) {
+            clickButton.addEventListener('click', function () {
+                // 1. Fetch values manually from our input boxes
+                const nameVal = document.getElementById('name').value;
+                const emailVal = document.getElementById('email').value;
+                const typeVal = document.getElementById('service-type').value;
+                const msgVal = document.getElementById('message').value;
+
+                // 2. Prevent empty submissions
+                if (!nameVal || !emailVal || !msgVal) {
+                    alert("Please fill out all required fields before sending.");
+                    return;
+                }
+
+                // 3. Package the data for Web3Forms API
+                const jsonPayload = JSON.stringify({
+                    access_key: "f7016366-c862-47fa-9f0a-f64aab13ce51", // <--- Paste your real key inside these quotes!
+                    name: nameVal,
+                    email: emailVal,
+                    subject: `New [${typeVal.toUpperCase()}] Inquiry from Leftech Website`,
+                    message: msgVal
+                });
+
+                // 4. Send data package securely across the network
+                const targetUrl = 'https:' + '/' + '/api.web3forms.com/submit';
+                fetch(targetUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: jsonPayload
+                })
+                    .then(async (response) => {
+                        if (response.status === 200) {
+                            alert("Message sent successfully! I will get back to you shortly.");
+                            // Clear all text inputs upon successful delivery
+                            document.getElementById('name').value = '';
+                            document.getElementById('email').value = '';
+                            document.getElementById('message').value = '';
+                        } else {
+                            alert("Server transmission error. Please try again later.");
+                        }
+                    })
+                    .catch(error => {
+                        alert("Network connection error. Please check your internet connection.");
+                    });
+            });
         }
-      }
-    });
 
-    // Remove active status from all links, then add it to the visible one
-    navItems.forEach(item => {
-      item.classList.remove('active');
-      if (item.getAttribute('data-section') === currentSectionId) {
-        item.classList.add('active');
-      }
-    });
-  });
+    </script>
 
-  // 2. SMOOTH SCROLL CLICK FIX
-  navItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-      // Clear old underlines instantly on click
-      navItems.forEach(nav => nav.classList.remove('active'));
-      item.classList.add('active');
-    });
-  });
-  
-// 3. SECURE BACKGROUND WEB3FORMS DISPATCH ENGINE
-const clickButton = document.getElementById('submit-btn-click');
-
-if (clickButton) {
-  clickButton.addEventListener('click', function() {
-    // 1. Fetch values manually from our input boxes
-    const nameVal = document.getElementById('name').value;
-    const emailVal = document.getElementById('email').value;
-    const typeVal = document.getElementById('service-type').value;
-    const msgVal = document.getElementById('message').value;
-
-    // 2. Prevent empty submissions
-    if (!nameVal || !emailVal || !msgVal) {
-      alert("Please fill out all required fields before sending.");
-      return;
-    }
-
-    // 3. Package the data for Web3Forms API
-    const jsonPayload = JSON.stringify({
-      access_key: "f7016366-c862-47fa-9f0a-f64aab13ce51", // <--- Paste your real key inside these quotes!
-      name: nameVal,
-      email: emailVal,
-      subject: `New [${typeVal.toUpperCase()}] Inquiry from Leftech Website`,
-      message: msgVal
-    });
-
-    // 4. Send data package securely across the network
-	const targetUrl = 'https:' + '/' + '/api.web3forms.com/submit';
-    fetch(targetUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: jsonPayload
-    })
-    .then(async (response) => {
-      if (response.status === 200) {
-        alert("Message sent successfully! I will get back to you shortly.");
-        // Clear all text inputs upon successful delivery
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('message').value = '';
-      } else {
-        alert("Server transmission error. Please try again later.");
-      }
-    })
-    .catch(error => {
-      alert("Network connection error. Please check your internet connection.");
-    });
-  });
-}
-
-</script>
-
-  </body>
+</body>
 </html>
