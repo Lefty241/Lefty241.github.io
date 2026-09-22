@@ -208,7 +208,7 @@ p.tagline {
 .tech-art-node {
   position: relative;
   width: 400px;
-  height: 300px;
+  height: 320px;
   border-radius: 24px;
   background: radial-gradient(circle at 30% 30%, rgba(0, 255, 204, 0.1), transparent);
   border: 1px solid rgba(0, 255, 204, 0.15);
