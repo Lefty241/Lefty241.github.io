@@ -128,6 +128,22 @@
                     </div>
                 </a>
             </div>
+			
+			<!-- Item: Digital Fab -->
+            <div class="portfolio-item art">
+                <div class="image-wrapper cycle-3">
+                    <img src="images/race-parts3.png" alt="race3" class="item-img">
+                    <img src="images/race-parts2.png" alt="race2" class="item-img">
+                    <img src="images/race-parts1.png" alt="race1" class="item-img">
+                </div>
+                <a href="case-study-race-parts-replication.html" style="text-decoration: none; color: inherit;">
+                    <div class="item-info">
+                        <span class="item-tag tag-purple">Digital Fab</span>
+                        <h3>Race Parts Replication</h3>
+                        <p>A local motorsports race team commissioned reverse engineering and repeatable fabrication of race-damaged parts which are otherwise difficult or expensive to replace. <span style="color: var(--accent-purple)">Click for case study.</span></p>
+                    </div>
+                </a>
+            </div>
 
             <!-- Item with 3 stacked images on hover AND intem-info wrapped in case-study link -->
             <div class="portfolio-item software">
@@ -137,7 +153,7 @@
                     <img src="images/crab-live.jpg" alt="Raw State Input" class="item-img">
                 </div>
                 <!-- Wrap your card description content box in an anchor link pointer line -->
-                <a href="case-study-template.html" style="text-decoration: none; color: inherit;">
+                <a href="case-study-edge-detection.html" style="text-decoration: none; color: inherit;">
                     <div class="item-info">
                         <span class="item-tag tag-neon">Image Processing</span>
                         <h3>Edge Detection Pipeline</h3>
@@ -239,6 +255,12 @@
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" required placeholder="john@example.com">
             </div>
+			
+			<!-- THE HONEYPOT TRAP (Hidden from humans, bait for bots) -->
+			<div class="form-group-honey">
+                <label for="company_website">Company Website</label>
+    			<input type="text" name="company_website" id="company_website" autocomplete="off" tabindex="-1">
+            </div>
 
             <div class="form-group">
                 <label for="service-type">Project Type</label>
@@ -296,13 +318,23 @@
             <p>&copy; 2026 LEFTECH Services. All rights reserved. Made using native HTML5 & CSS3.</p>
         </div>
     </footer>
+	
+	<!-- CUSTOM FUTURISTIC NOTIFICATION MODAL -->
+    <div id="custom-modal" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-glow"></div>
+        <h3 id="modal-title">System Status</h3>
+        <p id="modal-message">Notification message text goes here.</p>
+        <button id="modal-close-btn" class="btn btn-primary">Acknowledge</button>
+      </div>
+    </div>
 
     <!-- Scroll and Click Tracking Script -->
     <script>
         const navItems = document.querySelectorAll('.nav-item');
         const sections = document.querySelectorAll('section, .bento-grid');
 
-        // 1. TRACK SCROLLING POSITION
+        // TRACK SCROLLING POSITION
         window.addEventListener('scroll', () => {
             let currentSectionId = 'hero'; // Default fallback anchor
 
@@ -328,7 +360,7 @@
             });
         });
 
-        // 2. SMOOTH SCROLL CLICK FIX
+        // SMOOTH SCROLL CLICK FIX
         navItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 // Clear old underlines instantly on click
@@ -337,20 +369,37 @@
             });
         });
 
-        // 3. SECURE BACKGROUND WEB3FORMS DISPATCH ENGINE
+        // SECURE BACKGROUND WEB3FORMS DISPATCH ENGINE
         const clickButton = document.getElementById('submit-btn-click');
-
         if (clickButton) {
-            clickButton.addEventListener('click', function () {
+            clickButton.addEventListener('click', function (e) {
                 // 1. Fetch values manually from our input boxes
                 const nameVal = document.getElementById('name').value;
                 const emailVal = document.getElementById('email').value;
                 const typeVal = document.getElementById('service-type').value;
                 const msgVal = document.getElementById('message').value;
+				
+				// 1a. Stop bots! Snag the value of the secret honeypot field
+                const honeypot = document.getElementById('company_website').value;              
+                // If it has ANY text inside, a bot filled it out
+                if (honeypot.trim() !== "") {
+                  console.log("Spam bot blocked locally!");                  
+                  // Stop the form from submitting to Web3Forms completely
+                  e.preventDefault();                   
+                  // Optional: Pretend it worked so the bot stops trying
+                  alert("Message sent successfully!");
+				  // Clear all text inputs upon successful delivery
+                  document.getElementById('name').value = '';
+                  document.getElementById('email').value = '';
+                  document.getElementById('message').value = '';
+                  return;
+                }
 
                 // 2. Prevent empty submissions
                 if (!nameVal || !emailVal || !msgVal) {
-                    alert("Please fill out all required fields before sending.");
+                    //alert("Please fill out all required fields before sending.");
+					// use my awesome styled modal instead!
+					showModal("Required Parameters Missing", "Please provide a valid name, email address, and context details before broadcasting.", "error");
                     return;
                 }
 
@@ -375,20 +424,66 @@
                 })
                     .then(async (response) => {
                         if (response.status === 200) {
-                            alert("Message sent successfully! I will get back to you shortly.");
+                            //alert("Message sent successfully! I will get back to you shortly.");
+							// use my awesome styled modal instead!
+							showModal("Message Transmitted", "Your transmission was logged successfully. I will reach out shortly.", "success");
                             // Clear all text inputs upon successful delivery
                             document.getElementById('name').value = '';
                             document.getElementById('email').value = '';
                             document.getElementById('message').value = '';
                         } else {
-                            alert("Server transmission error. Please try again later.");
+                            //alert("Server transmission error. Please try again later.");
+							// use my awesome styled modal instead!
+							showModal("Transmission Failure", "The network endpoint rejected the data stream. Please try again later.", "error");
                         }
                     })
                     .catch(error => {
-                        alert("Network connection error. Please check your internet connection.");
+                        //alert("Network connection error. Please check your internet connection.");
+						// use my awesome styled modal instead!
+						showModal("Network Error", "Unable to establish stable handshake protocol. Check your local hardware connection.", "error");
                     });
             });
         }
+		
+		// REUSABLE GLASSMORPHISM MODAL CONTROLLER ENGINE
+        function showModal(title, message, type = 'success') {
+            const modal = document.getElementById('custom-modal');
+            const modalBox = modal.querySelector('.modal-box');
+            
+            // 1. Inject content text variables dynamically
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-message').textContent = message;
+            
+            // 2. Clean out old conditional state tracking styles
+            modalBox.classList.remove('modal-success', 'modal-error');
+            
+            // 3. Inject matching color variant states
+            if (type === 'error') {
+                modalBox.classList.add('modal-error');
+            } else {
+                modalBox.classList.add('modal-success');
+            }
+            
+            // 4. Fire the modal visual activation transition
+            modal.classList.add('modal-active');
+        }
+        
+        // CLOSE MODAL LISTENER EVENT
+        document.addEventListener('click', function(e) {
+          const modal = document.getElementById('custom-modal');          
+          // Safety check: Exit early if our modal isn't even open right now
+          if (!modal || !modal.classList.contains('modal-active')) return;      
+          // 1. If they hit the physical Acknowledge button: Close it.
+          if (e.target.id === 'modal-close-btn') {
+              modal.classList.remove('modal-active');
+              return;
+          }      
+          // 2. If they hit the outer background overlay canvas: Close it.
+          // (e.target === modal guarantees they clicked the dark backdrop, NOT the card itself!)
+          if (e.target === modal) {
+              modal.classList.remove('modal-active');
+          }
+    	});
 
     </script>
 

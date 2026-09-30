@@ -200,6 +200,7 @@ p.tagline {
 }
 
 .hero-graphic {
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -618,6 +619,18 @@ input[name="portfolio-filter"] {
   font-size: 0.95rem;
 }
 
+/* --- HONEYPOT SPAM PROTECTION STYLING --- */
+.form-group-honey {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
 /* --- SITE FOOTER LAYOUT STYLES --- */
 .site-footer {
   margin-top: 8rem;
@@ -696,6 +709,89 @@ input[name="portfolio-filter"] {
   color: rgba(160, 165, 181, 0.5); /* Deep muted subtext stamp color */
   margin-bottom: 0;
 }
+
+/* --- PREMIUM GLASSMORPHISM MODAL STYLES --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 6, 10, 0.8); /* Darkened backfill shielding your page layout */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000; /* Stacks completely above your fixed navbar (z-index: 1000) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Triggered state via JavaScript class injection */
+.modal-overlay.modal-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-box {
+  background: rgba(18, 20, 32, 0.65); /* Translucent blend using --bg-card hue */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.modal-overlay.modal-active .modal-box {
+  transform: scale(1); /* Smooth spring-zoom pop effect on load */
+}
+
+/* Dynamic ambient accent lighting inside the box */
+.modal-glow {
+  position: absolute;
+  top: -10%;
+  left: 25%;
+  width: 50%;
+  height: 20px;
+  background: var(--accent-neon);
+  filter: blur(25px);
+  opacity: 0.3;
+  transition: background 0.3s ease;
+}
+
+.modal-box h3 {
+  font-family: var(--font-header);
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.modal-box p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* Button sizing override to center correctly within the flex grid */
+#modal-close-btn {
+  width: 100%;
+  cursor: pointer;
+  padding: 0.85rem;
+}
+
+/* Helper color states managed dynamically by JavaScript logic handles */
+.modal-box.modal-error { border-color: rgba(255, 68, 95, 0.3); }
+.modal-box.modal-error .modal-glow { background: var(--accent-red); }
+.modal-box.modal-error h3 { color: var(--accent-red); }
+
+.modal-box.modal-success { border-color: rgba(0, 255, 204, 0.3); }
+.modal-box.modal-success .modal-glow { background: var(--accent-neon); }
+.modal-box.modal-success h3 { color: var(--accent-neon); }
 
 /* MOBILE FIXES */
 @media (max-width: 600px) {
