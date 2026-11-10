@@ -1,0 +1,20 @@
+# Site Settings
+title: "LefTech | tech solutions hub"
+description: "Custom software engineering, commercial drone operations, 3D print engineering, parts replication, and tech-driven art assets."
+url: "https://lefty241.github.io" # Do NOT put a slash at the end
+
+# Author Info
+author:
+  name: "David Clark"
+  email: "dcc241@hotmail.com"
+  twitter_username: "your_twitter_handle"
+  github_username: "Lefty241"
+
+# Build Settings
+markdown: kramdown
+
+# SEO & Discovery Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
